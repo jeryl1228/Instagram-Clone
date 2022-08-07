@@ -13,7 +13,7 @@ function Sidebar() {
             <Profile 
             userName="username" 
             caption="Username" 
-            urlText="Switch" 
+            urlText="Logout" 
             iconSize="big" 
             image={image} 
             />

@@ -1,19 +1,15 @@
 import '../styles/app.scss';
-import Navigation from './Navigation'
-import Cards from './Cards'
-import SideBar from './Sidebar'
+import { Route, Routes } from 'react-router-dom';
+import Login from './Login'
+import Home from './Home'
 
 function App() {
+  
   return (
-    <div className="App">
-      <Navigation />
-      <main>
-        <div className="container">
-          <Cards />
-          <SideBar />
-        </div>
-      </main>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />} />
+    </Routes>
   );
 }
 

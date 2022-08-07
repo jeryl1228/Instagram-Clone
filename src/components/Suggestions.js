@@ -7,7 +7,7 @@ function Suggestions() {
     <div className="suggestions">
       <div className="titleContainer">
         <div className="title">Suggestions for you</div>
-        <a href="/">See All</a>
+        <a href="/Home">See All</a>
       </div>
 
       <Profile 
