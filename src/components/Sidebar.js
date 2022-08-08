@@ -6,17 +6,20 @@ import Suggestions from "./Suggestions"
 import Footer from "./Footer";
 import image from "../images/profile.jpg";
 
+
 function Sidebar() {
+
   return (
          <Sticky topOffset={-80}>
           <div className="sidebar">
             <Profile 
             userName="username" 
-            caption="Username" 
+            caption='Username'
             urlText="Logout" 
             iconSize="big" 
             image={image} 
             />
+            <button>Create a Post</button> 
             <Suggestions />
             <Footer />
           </div> 

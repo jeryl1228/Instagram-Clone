@@ -10,10 +10,10 @@ import ProfileIcon from "./ProfileIcon";
 function Menu() {
   return (
     <div className="menu">
-        <Home className="icon" />
-        <Inbox className="icon" />
-        <Explore className="icon" />
-        <Notifications className="icon" />
+        <a href="/Home"><Home className="icon" /></a>
+        <a href="/Inbox"><Inbox className="icon" /></a>
+        <a href="/Explore"><Explore className="icon" /></a>
+        <a href="/Notifications"><Notifications className="icon" /></a>
         <ProfileIcon iconSize="small" image={image} />
     </div>
   )
