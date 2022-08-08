@@ -40,6 +40,15 @@
       padding-top: 0.5em;
     }
   }
+  .caption{
+    display: flex;
+    font-size: 0.75em;
+    margin-left: 1.5em;
+    padding-bottom: 2em;
+  }
+  .captionName{
+    margin-right: 0.5em;
+  }
 
   .comments {
     margin-bottom: 0.75em;

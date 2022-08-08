@@ -31,6 +31,7 @@ function Cards() {
           likedByText={card.likedByText}
           likedByNumber={card.likedByNumber}
           hours={card.hours}
+          description={card.description}
         />
       ))}
     </div>

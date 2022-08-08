@@ -3,10 +3,9 @@ import "../styles/card.scss";
 import Profile from "./Profile";
 import { ReactComponent as CardButton } from "../images/cardButton.svg";
 import CardMenu from "./CardMenu.js";
-import Comment from "./Comment";
 
 function Card(props) {
-  const { accountName, storyBorder, image, likedByText, likedByNumber, hours } =
+  const { accountName, storyBorder, image, likedByText, likedByNumber, hours, description } =
     props;
 
   return (
@@ -28,6 +27,9 @@ function Card(props) {
           <strong>{likedByNumber}</strong>
         </span>
       </div>
+      <span className="caption">
+          <strong className="captionName">{accountName}</strong> {description}
+        </span>
       <div className="timePosted">{hours} HOURS AGO</div>
       <div className="addComment">
         <div className="commentText">Add a comment...</div>

@@ -1,12 +1,57 @@
 import React, { useState } from "react";
 import "../styles/createPost.scss";
+import {storage,db} from "../data/firebaseConfig"
+import firebase from "firebase/compat/app"
 
 function CreatePost() {
+  const [ image, setImage ] = useState(null);
+  const [ description, setDescription ] = useState('');
+  const [ progress, setProgress ] = useState(0);
   const [modal, setModal] = useState(false);
+
   const toggleModal = () => {
     setModal(!modal);
   };
 
+  const handleChange = (event) => {
+    if(event.target.files[0]){
+      setImage(event.target.files[0]);
+    }
+  }
+  
+  const handleUpload = () => {
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+
+    uploadTask.on(
+      "state_changed",
+    (snapshot)=>{
+      const progress = Math.round(
+        (snapshot.bytesTransferred/snapshot.totalBytes) * 100
+      );
+      setProgress(progress);
+    },
+    (error)=>{
+      console.log(error);
+      alert(error.message);
+    },
+    () => {
+      storage
+      .ref("images")
+      .child(image.name)
+      .getDownloadURL()
+      .then(url=>{
+        db.collection("card").add({
+          //hours: firebase.firestore.FieldValue.serverTimestamp(),
+          description: description,
+          image: url
+        });
+        setProgress(0);
+        setDescription('');
+        setImage(null);
+      });
+    }
+    )
+  }
   return (
     <>
       <button onClick={toggleModal} className="btn-modal">
@@ -19,11 +64,12 @@ function CreatePost() {
           <div className="modal-content">
             <h2>New Post</h2>
             <label>Description: </label>
-            <input text="text" placeholder="Enter the Post Description"></input>
+            <input text="text" placeholder="Enter the Post Description" onChange={event => setDescription(event.target.value)} value={description}></input>
             <br />
-            <input type="file"></input>
+            <input type="file" onChange={handleChange}></input>
             <br />
-            <button>Make Post</button>
+            <button onClick={handleUpload}>Make Post</button>
+            <progress value={progress} max="100"/>
             <button className="close-modal" onClick={toggleModal}>
               CLOSE
             </button>
