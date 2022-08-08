@@ -1,79 +1,80 @@
 @import "./properties";
 
 .card {
-    border: 1px solid $border-color-grey;
-    background-color: $background-white;
-    margin-bottom: 3.5em;
-    border-radius: 3px;
+  border: 1px solid $border-color-grey;
+  background-color: $background-white;
+  margin-bottom: 3.5em;
+  border-radius: 3px;
 
-    header{
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        padding: 0.7em;
-        
-        .profile{
-            margin-bottom: 0;
-        }
-        .cardButton{
-            height: 30px;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0.7em;
 
-            &:hover{
-                cursor: pointer;
-            }
-        }
+    .profile {
+      margin-bottom: 0;
     }
+    .cardButton {
+      height: 30px;
 
-    .cardImage{
-        width: 100%;
-        display: block;
+      &:hover {
+        cursor: pointer;
+      }
     }
+  }
 
-    .likedBy{
-        display: flex;
-        padding-left: 1em;
-    
-        span{
-            font-size: 0.75em;
-            margin-left: 0.5em;
-            padding-top: 0.5em;
-        }
-    }
+  .cardimage {
+    width: 100%;
 
-    .comments{
-        margin-bottom: 0.75em;
-    }
+    object-fit: contain;
+  }
 
-    .timePosted{
-        font-size: 0.6em;
-        padding-left: 2em;
-        padding-bottom: 1em;
-        color: $font-color-secondary;
-        border-bottom: 1px solid $border-color-grey-secondary;
+  .likedBy {
+    display: flex;
+    padding-left: 1em;
+
+    span {
+      font-size: 0.75em;
+      margin-left: 0.5em;
+      padding-top: 0.5em;
     }
-    .addComment{
-        display:flex;
-        justify-content: space-between;
-        font-size: 0.85em;
-        padding: 1.5em 1.25em;
-        .commentText{
-            color: $font-color-secondary;
-        }
-        .postText{
-            color: $link-color-secondary;
-        }
+  }
+
+  .comments {
+    margin-bottom: 0.75em;
+  }
+
+  .timePosted {
+    font-size: 0.6em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    color: $font-color-secondary;
+    border-bottom: 1px solid $border-color-grey-secondary;
+  }
+  .addComment {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    padding: 1.5em 1.25em;
+    .commentText {
+      color: $font-color-secondary;
     }
+    .postText {
+      color: $link-color-secondary;
+    }
+  }
 }
-@media only screen and (max-width: 640px){
-    .card{
-        border: none;
-        background-color: $background-grey;
-        margin-bottom: 0.75em;
-        .addComment{
-            display:none;
-        }
-        .timePosted{
-            border:none;
-        }
+@media only screen and (max-width: 640px) {
+  .card {
+    border: none;
+    background-color: $background-grey;
+    margin-bottom: 0.75em;
+    .addComment {
+      display: none;
     }
+    .timePosted {
+      border: none;
+    }
+  }
 }

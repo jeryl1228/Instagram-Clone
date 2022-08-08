@@ -1,7 +1,7 @@
-import React from 'react'
-import "../styles/profile.scss"
-import ProfileIcon from "./ProfileIcon"
-import users from "../data/users"
+import React from "react";
+import "../styles/profile.scss";
+import ProfileIcon from "./ProfileIcon";
+import users from "../data/users";
 
 function Profile(props) {
   const {
@@ -12,20 +12,22 @@ function Profile(props) {
     captionSize,
     storyBorder,
     hideAccountName,
-    image
+    image,
   } = props;
 
-  let accountName = username 
-  ? username : users[Math.floor(Math.random()* users.length)].username;
+  let accountName = username
+    ? username
+    : users[Math.floor(Math.random() * users.length)].username;
 
   return (
     <div className="profile">
-      <ProfileIcon 
-      iconSize={iconSize} 
-      storyBorder={storyBorder} 
-      image={image} 
+      <ProfileIcon
+        iconSize={iconSize}
+        storyBorder={storyBorder}
+        image={image}
       />
-      {(accountName || caption) && !hideAccountName &&(
+      <br></br>
+      {(accountName || caption) && !hideAccountName && (
         <div className="textContainer">
           <span className="accountName">{accountName}</span>
           <span className={`caption ${captionSize}`}>{caption}</span>
@@ -33,7 +35,7 @@ function Profile(props) {
       )}
       <a href="/">{urlText}</a>
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;
