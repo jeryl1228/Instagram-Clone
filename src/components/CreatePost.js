@@ -18,11 +18,8 @@ function CreatePost() {
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
             <h2>New Post</h2>
-            <label>Title: </label>
-            <input text="text"></input>
-            <br />
             <label>Description: </label>
-            <input text="text"></input>
+            <input text="text" placeholder="Enter the Post Description"></input>
             <br />
             <input type="file"></input>
             <br />
