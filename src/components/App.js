@@ -5,6 +5,7 @@ import Home from "./Home";
 import Inbox from "./Inbox";
 import CreatePost from "./CreatePost";
 import Notifications from "./Notifications.js";
+//import {ProfileMain} from "./ProfilePage/ProfileMain"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/inbox" element={<Inbox />} />
       <Route path="/createpost" element={<CreatePost />} />
       <Route path="/notifications" element={<Notifications />} />
+      {/* <Route path="/profile" element={<ProfileMain />} /> */}
     </Routes>
   );
 }
