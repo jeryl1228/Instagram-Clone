@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
-import '../styles/explore.scss'
+import React, { useState } from "react";
+import "../styles/createPost.scss";
 
-function Explore() {
+function CreatePost() {
   const [modal, setModal] = useState(false);
-  const toggleModal = () =>{
-    setModal(!modal)
-  }
+  const toggleModal = () => {
+    setModal(!modal);
+  };
 
   return (
     <>
-      <button onClick={toggleModal} className="btn-modal">Create a Post</button>
-      
+      <button onClick={toggleModal} className="btn-modal">
+        Create a Post
+      </button>
+
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
@@ -24,7 +26,7 @@ function Explore() {
             <br />
             <input type="file"></input>
             <br />
-            <button>Make Post</button>        
+            <button>Make Post</button>
             <button className="close-modal" onClick={toggleModal}>
               CLOSE
             </button>
@@ -32,8 +34,7 @@ function Explore() {
         </div>
       )}
     </>
-  )
+  );
 }
 
-
-export default Explore
+export default CreatePost;
