@@ -5,14 +5,14 @@ import "./ProfilePage.css";
 function ProfileHeader() {
   return (
     <header>
-      <div className="container">
-        <div className="profile">
-          <div className="profile-image">
-            <ProfileIcon className="profile-photo" />
+      <div className="container-pp">
+        <div className="profile-pp">
+          <div className="profile-image-pp">
+            <ProfileIcon className="profile-photo-pp" />
           </div>
 
-          <div className="profile-user-settings">
-            <h1 className="profile-user-name">jeryaa</h1>
+          <div className="profile-user-settings-pp">
+            <h1 className="profile-user-name-pp">jeryaa</h1>
 
             <button className="btn profile-edit-btn">Edit Profile</button>
 
@@ -24,25 +24,25 @@ function ProfileHeader() {
             </button>
           </div>
 
-          <div className="profile-stats">
+          <div className="profile-stats-pp">
             <ul>
               <li>
-                <span className="profile-stat-count">164</span> posts
+                <span className="profile-stat-count-pp">164</span> posts
               </li>
               <li>
-                <span className="profile-stat-count">188</span> followers
+                <span className="profile-stat-count-pp">188</span> followers
               </li>
               <li>
-                <span className="profile-stat-count">206</span> following
+                <span className="profile-stat-count-pp">206</span> following
               </li>
             </ul>
           </div>
 
-          <div className="profile-bio">
+          <div className="profile-bio-pp">
             <p>
-              <span className="profile-real-name">Jeryl Teo</span>
+              <span className="profile-real-name-pp">Jeryl Teo</span>
             </p>
-            <span className="profile-bio-info">
+            <span className="profile-bio-info-pp">
               Coder by Day, Tiktoker by Night📷✈️🏕️
             </span>
           </div>
