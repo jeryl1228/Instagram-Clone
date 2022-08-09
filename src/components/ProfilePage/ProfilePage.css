@@ -20,7 +20,7 @@ img {
   display: block;
 }
 
-.container {
+.container-pp {
   max-width: 93.5rem;
   margin: 0 auto;
   padding: 0 2rem;
@@ -46,17 +46,17 @@ img {
 
 /* Profile Section */
 
-.profile {
+.profile-pp {
   padding: 5rem 0;
 }
 
-.profile::after {
+.profile-pp::after {
   content: "";
   display: block;
   clear: both;
 }
 
-.profile-image {
+.profile-image-pp {
   float: left;
   width: calc(33.333% - 1rem);
   display: flex;
@@ -65,22 +65,22 @@ img {
   margin-right: 3rem;
 }
 
-.profile-image img {
+.profile-image-pp img {
   border-radius: 50%;
 }
 
-.profile-user-settings,
-.profile-stats,
-.profile-bio {
+.profile-user-settings-pp,
+.profile-stats-pp,
+.profile-bio-pp {
   float: left;
   width: calc(66.666% - 2rem);
 }
 
-.profile-user-settings {
+.profile-user-settings-pp {
   margin-top: 1.1rem;
 }
 
-.profile-user-name {
+.profile-user-name-pp {
   display: inline-block;
   font-size: 30px;
   font-weight: 300;
@@ -100,11 +100,11 @@ img {
   margin-left: 1rem;
 }
 
-.profile-stats {
+.profile-stats-pp {
   margin-top: 2.3rem;
 }
 
-.profile-stats li {
+.profile-stats-pp li {
   display: inline-block;
   font-size: 20px;
   line-height: 1.5;
@@ -112,22 +112,23 @@ img {
   cursor: pointer;
 }
 
-.profile-stats li:last-of-type {
+.profile-stats-pp li:last-of-type {
   margin-right: 0;
 }
 
-.profile-bio {
+.profile-bio-pp {
   font-size: 20px;
   font-weight: 400;
   line-height: 0.4;
   margin-top: 2.3rem;
 }
 
-.profile-real-name,
-.profile-stat-count,
+.profile-real-name-pp,
+.profile-stat-count-pp,
 .profile-edit-btn {
   font-weight: 600;
 }
+/*End of Header CSS*/
 
 /* Gallery Section */
 
@@ -211,36 +212,36 @@ ul {
 /* Media Query */
 
 @media screen and (max-width: 40rem) {
-  .profile {
+  .profile-pp {
     display: flex;
     flex-wrap: wrap;
     padding: 4rem 0;
   }
 
-  .profile::after {
+  .profile-pp::after {
     display: none;
   }
 
-  .profile-image,
-  .profile-user-settings,
-  .profile-bio,
-  .profile-stats {
+  .profile-image-pp,
+  .profile-user-settings-pp,
+  .profile-bio-pp,
+  .profile-stats-pp {
     float: none;
     width: auto;
   }
 
-  .profile-image img {
+  .profile-image-pp img {
     width: 7.7rem;
   }
 
-  .profile-user-settings {
+  .profile-user-settings-pp {
     flex-basis: calc(100% - 10.7rem);
     display: flex;
     flex-wrap: wrap;
     margin-top: 1rem;
   }
 
-  .profile-user-name {
+  .profile-user-name-pp {
     font-size: 2.2rem;
   }
 
@@ -255,23 +256,23 @@ ul {
     margin-left: 0;
   }
 
-  .profile-bio {
+  .profile-bio-pp {
     font-size: 1.4rem;
     margin-top: 1.5rem;
   }
 
   .profile-edit-btn,
-  .profile-bio,
-  .profile-stats {
+  .profile-bio-pp,
+  .profile-stats-pp {
     flex-basis: 100%;
   }
 
-  .profile-stats {
+  .profile-stats-pp {
     order: 1;
     margin-top: 1.5rem;
   }
 
-  .profile-stats ul {
+  .profile-stats-pp ul {
     display: flex;
     text-align: center;
     padding: 0;
@@ -279,13 +280,13 @@ ul {
     border-bottom: 0.1rem solid #dadada;
   }
 
-  .profile-stats li {
+  .profile-stats-pp li {
     font-size: 1.4rem;
     flex: 1;
     margin: 0;
   }
 
-  .profile-stat-count {
+  .profile-stat-count-pp {
     display: block;
   }
 }
@@ -293,7 +294,7 @@ ul {
 /* Grid Feature Query */
 
 @supports (display: grid) {
-  .profile {
+  .profile-pp {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(3, auto);
@@ -301,7 +302,7 @@ ul {
     align-items: center;
   }
 
-  .profile-image {
+  .profile-image-pp {
     grid-row: 1 / -1;
   }
 
@@ -311,10 +312,10 @@ ul {
     grid-gap: 2rem;
   }
 
-  .profile-image,
-  .profile-user-settings,
-  .profile-stats,
-  .profile-bio,
+  .profile-image-pp,
+  .profile-user-settings-pp,
+  .profile-stats-pp,
+  .profile-bio-pp,
   .gallery-item,
   .gallery {
     width: 100%;
@@ -322,32 +323,32 @@ ul {
   }
 
   @media (max-width: 40rem) {
-    .profile {
+    .profile-pp {
       grid-template-columns: auto 1fr;
       grid-row-gap: 1.5rem;
     }
 
-    .profile-image {
+    .profile-image-pp {
       grid-row: 1 / 2;
     }
 
-    .profile-user-settings {
+    .profile-user-settings-pp {
       display: grid;
       grid-template-columns: auto 1fr;
       grid-gap: 1rem;
     }
 
     .profile-edit-btn,
-    .profile-stats,
-    .profile-bio {
+    .profile-stats-pp,
+    .profile-bio-pp {
       grid-column: 1 / -1;
     }
 
-    .profile-user-settings,
+    .profile-user-settings-pp,
     .profile-edit-btn,
     .profile-settings-btn,
-    .profile-bio,
-    .profile-stats {
+    .profile-bio-pp,
+    .profile-stats-pp {
       margin: 0;
     }
   }
