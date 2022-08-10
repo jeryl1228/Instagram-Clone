@@ -8,7 +8,7 @@ const Like = () => {
   return (
     <div
       style={{
-        margin: "auto",
+        margin: "-5.5%",
         display: "block",
         width: "fit-content",
       }}
