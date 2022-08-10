@@ -4,11 +4,11 @@ import { ReactComponent as Home } from "../images/home.svg";
 import { ReactComponent as Inbox } from "../images/inbox.svg";
 import { ReactComponent as CreatePost } from "../images/createPost.svg";
 import { ReactComponent as Notifications } from "../images/notifications.svg";
-import image from "../images/profile.jpg";
+
 import ProfileIcon from "./ProfileIcon";
 import "../styles/createPost.scss";
 import { storage, db } from "../data/firebaseConfig";
-import firebase from "firebase/compat/app";
+
 import Login from "./Login";
 
 function Menu() {
@@ -60,7 +60,7 @@ function Menu() {
   };
   return (
     <div className="menu">
-      <a href="/Home">
+      <a href="/">
         <Home className="icon" />
       </a>
       <a href="/Inbox">
