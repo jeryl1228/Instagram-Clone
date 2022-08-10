@@ -49,6 +49,9 @@ function Login() {
         });
       })
       .catch((error) => alert(error.message));
+
+    setModal(false);
+    console.log(`New user created: ${username}`);
   };
 
   const Login = (event) => {
@@ -57,6 +60,8 @@ function Login() {
     auth
       .signInWithEmailAndPassword(email, password)
       .catch((error) => alert(error.message));
+
+    setModal2(false);
   };
 
   return (
