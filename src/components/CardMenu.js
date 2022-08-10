@@ -11,7 +11,7 @@ function CardMenu() {
     <div className="cardMenu">
       <div className="interactions">
         {/* <Notifications className="icon" /> */}
-        <Like className="icon fa-heart" />
+        <Like className="icon heart" />
         <Comments className="icon" />
         <Inbox className="icon" />
       </div>
