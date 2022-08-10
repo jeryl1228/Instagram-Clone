@@ -8,7 +8,7 @@ function ProfilePhotos() {
         <div className="gallery">
           <div className="gallery-item" tabindex="0">
             <img
-              src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
+              src="https://firebasestorage.googleapis.com/v0/b/instagram-clone-4b0bb.appspot.com/o/userImages%2Fmen%20and%20mountain.jpeg?alt=media&token=c271fa66-f043-4375-a536-a40baa28d0fc"
               className="gallery-image"
               alt=""
             />
