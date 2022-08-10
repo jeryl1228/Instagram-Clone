@@ -5,8 +5,15 @@ import { ReactComponent as CardButton } from "../images/cardButton.svg";
 import CardMenu from "./CardMenu.js";
 
 function Card(props) {
-  const { accountName, storyBorder, image, likedByText, likedByNumber, hours, description } =
-    props;
+  const {
+    accountName,
+    storyBorder,
+    image,
+    likedByText,
+    likedByNumber,
+    hours,
+    description,
+  } = props;
 
   return (
     <div className="card">
@@ -28,8 +35,8 @@ function Card(props) {
         </span>
       </div>
       <span className="caption">
-          <strong className="captionName">{accountName}</strong> {description}
-        </span>
+        <strong className="captionName">{accountName}</strong> {description}
+      </span>
       <div className="timePosted">{hours} HOURS AGO</div>
       <div className="addComment">
         <div className="commentText">Add a comment...</div>

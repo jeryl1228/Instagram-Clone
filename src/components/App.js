@@ -10,8 +10,7 @@ import ProfileMain from "./ProfilePage/ProfileMain";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/inbox" element={<Inbox />} />
       <Route path="/createpost" element={<CreatePost />} />
       <Route path="/notifications" element={<Notifications />} />
