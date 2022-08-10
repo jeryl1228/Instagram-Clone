@@ -1,43 +1,32 @@
 @import "./properties.scss";
 
-.App-header{
-    background-color: black;
-    min-height: 100vh;
+body {
+  background-color: $background-white;
+  font-family: $font;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  min-width: fit-content;
+}
+main {
+  background-color: $background-grey;
+  margin-top: 60px;
+
+  .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-body{
-    background-color: $background-white;
-    font-family: $font;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    min-width: fit-content;
-}
-main{
-    background-color: $background-grey;
-    margin-top: 60px;
-
-    .container{
-        display: flex;
-        justify-content: left;
-        margin: 0 auto;
-        max-width: 1000px;
-    }
+    justify-content: left;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
 }
 a {
-    text-decoration: none;
-    color: $link-color;
-    font-size: 0.9em;
-    font-weight: 500;
+  text-decoration: none;
+  color: $link-color;
+  font-size: 0.9em;
+  font-weight: 500;
 }
-@media only screen and (max-width: 1024px){
-    main .container{
-        justify-content: center !important;
-    }
+@media only screen and (max-width: 1024px) {
+  main .container {
+    justify-content: center !important;
+  }
 }
