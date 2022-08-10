@@ -9,6 +9,7 @@ import ProfileIcon from "./ProfileIcon";
 import "../styles/createPost.scss";
 import { storage, db } from "../data/firebaseConfig";
 import firebase from "firebase/compat/app";
+import Login from "./Login";
 
 function Menu() {
   const [image, setImage] = useState(null);
@@ -69,10 +70,11 @@ function Menu() {
       <a href="/Notifications">
         <Notifications className="icon" />
       </a>
-      <a href="/Profile">
+      <a href="/profile">
         <ProfileIcon iconSize="small" image={image} />
       </a>
-
+      <p>|</p>
+      <Login />
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>

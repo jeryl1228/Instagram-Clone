@@ -1,17 +1,23 @@
-.menu{
-    display: flex;
-    padding-right: 1.5em;
-    
-    .icon{
-        margin-right: 1.5em;
-        width: 23px;
-        height: 23px;
+.menu {
+  display: flex;
+  padding-right: 1.5em;
+  align-items: center;
 
-        &:hover{
-            cursor: pointer;
-        }
+  .icon {
+    margin-right: 1.5em;
+    width: 23px;
+    height: 23px;
+
+    &:hover {
+      cursor: pointer;
     }
-    .profileIcon{
-        margin-top: -3px;
-    }
+  }
+
+  p {
+    margin: 0;
+    padding-left: 10px;
+  }
+  //   .profileIcon {
+  //     // margin-top: -3px;
+  //   }
 }
