@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/createPost.scss";
 import { storage, db } from "../data/firebaseConfig";
+import { Input } from "@mui/material";
 
 function CreatePost() {
   const [image, setImage] = useState(null);
@@ -61,20 +62,22 @@ function CreatePost() {
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
-            <h2>New Post</h2>
+            <h2 className="label">New Post</h2>
             <label>Description: </label>
-            <input
+            <Input
               text="text"
               placeholder="Enter the Post Description"
               onChange={(event) => setDescription(event.target.value)}
               value={description}
-            ></input>
+              className="descinput"
+              variant="outlined"
+            ></Input>
             <br />
-            <input type="file" onChange={handleChange}></input>
+            <Input type="file" onChange={handleChange}></Input>
             <br />
             <button onClick={handleUpload}>Make Post</button>
-            <progress value={progress} max="100" />
-            <button className="close-modal" onClick={toggleModal}>
+            <progress value={progress} max="100" class="progressbar" />
+            <button className="close-modal" onClick={toggleModal} color="error">
               CLOSE
             </button>
           </div>
