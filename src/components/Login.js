@@ -5,7 +5,6 @@ import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
 import { auth } from "../data/firebaseConfig";
 import logo from "../images/instagramLogo.png";
-import { Menu } from "@mui/material";
 
 function Login() {
   const [username, setUsername] = useState("");
