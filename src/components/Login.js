@@ -1,63 +1,154 @@
-import "../styles/app.scss";
-import React from "react";
+import "../styles/login.scss";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import { app, database } from "../data/firebaseConfig";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import Input from "@mui/material/Input";
+import Button from "@mui/material/Button";
+import { auth } from "../data/firebaseConfig";
+import logo from "../images/instagramLogo.png";
 
 function Login() {
-  let navigate = useNavigate();
-  const [data, setData] = useState({
-    email: "",
-    password: "",
-  });
-  const auth = getAuth();
-  const handleInputs = (event) => {
-    let inputs = { [event.target.name]: event.target.value };
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [user, setUser] = useState(null);
+  const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
 
-    setData({ ...data, ...inputs });
+  const toggleModal = () => {
+    setModal(!modal);
   };
-  const handleSignUp = () => {
-    createUserWithEmailAndPassword(auth, data.email, data.password)
-      .then((response) => {
-        console.log(response.user);
+
+  const toggleModal2 = () => {
+    setModal2(!modal2);
+  };
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        console.log(authUser);
+        setUser(authUser);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => {
+      //perform cleanup actions
+      unsubscribe();
+    };
+  }, [user, username]);
+
+  const signUp = (event) => {
+    event.preventDefault();
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        return authUser.user.updateProfile({
+          displayName: username,
+        });
       })
-      .catch((err) => {
-        alert(err.message);
-      });
+      .catch((error) => alert(error.message));
   };
-  const handleSignIn = () => {
-    signInWithEmailAndPassword(auth, data.email, data.password)
-      .then((response) => {
-        console.log(response.user);
-        navigate(`Home`);
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+
+  const Login = (event) => {
+    event.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .catch((error) => alert(error.message));
   };
+
   return (
     <div className="App-header">
-      <input
-        placeholder="Email"
-        name="email"
-        type="email"
-        className="input-fields"
-        onChange={(event) => handleInputs(event)}
-      />
-      <input
-        placeholder="Password"
-        name="password"
-        type="password"
-        className="input-fields"
-        onChange={(event) => handleInputs(event)}
-      />
-      <button onClick={handleSignUp}>Sign Up</button>
-      <button onClick={handleSignIn}>Sign In</button>
+      {user ? (
+        <button onClick={() => auth.signOut()} className="btn-modal logout">
+          Logout
+        </button>
+      ) : (
+        <div>
+          <button onClick={toggleModal} className="btn-modal">
+            Sign up
+          </button>
+
+          <button onClick={toggleModal2} className="btn-modal">
+            Login
+          </button>
+        </div>
+      )}
+
+      {modal && (
+        <div className="modal">
+          <div onClick={toggleModal} className="overlay"></div>
+          <div className="modal-content">
+            <form className="form1">
+              <center>
+                <img className="logo2" src={logo} alt="instagram logo" />
+                <Input
+                  placeholder="username"
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="input"
+                />
+                <Input
+                  placeholder="email"
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="input"
+                />
+                <Input
+                  placeholder="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="input"
+                />
+                <Button type="submit" onClick={signUp}>
+                  Sign Up
+                </Button>
+                <Button onClick={toggleModal} color="error">
+                  Close
+                </Button>
+              </center>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {modal2 && (
+        <div className="modal">
+          <div onClick={toggleModal2} className="overlay"></div>
+          <div className="modal-content">
+            <form className="form2">
+              <center>
+                <img className="logo2" src={logo} alt="instagram logo" />
+                <Input
+                  placeholder="email"
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="input"
+                />
+                <Input
+                  placeholder="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="input"
+                />
+                <Button type="submit" onClick={Login}>
+                  Login
+                </Button>
+                <Button onClick={toggleModal2} color="error">
+                  Close
+                </Button>
+              </center>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
