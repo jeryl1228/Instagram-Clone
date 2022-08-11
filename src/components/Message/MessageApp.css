@@ -16,4 +16,11 @@
 
 /* Channel CSS */
 .MessageInput {
+  display: flex;
+}
+
+.textBox {
+  flex: 1;
+
+  position: relative;
 }
