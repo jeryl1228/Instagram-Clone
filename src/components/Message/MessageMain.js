@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./index.css";
 import MessageApp from "./MessageApp";
 import Navigation from "../Navigation";
 
-function MessageMain() {
+function MessageMain({ setUser }) {
   return (
     <React.StrictMode>
-      <Navigation />
+      <Navigation setUser={setUser} />
       <MessageApp />
     </React.StrictMode>
   );
