@@ -8,6 +8,7 @@ import { useAuthState, useDarkMode } from "./hooks";
 // Components
 import Channel from "./Channel";
 import Loader from "./Loader";
+import "./MessageApp.css";
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
@@ -22,8 +23,8 @@ if (!firebase.apps.length) {
 
 const MoonIcon = (props) => (
   <svg
-    // xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="-35 0 30 60"
     fill="currentColor"
     {...props}
   >
@@ -37,8 +38,8 @@ const MoonIcon = (props) => (
 
 const SunIcon = (props) => (
   <svg
-    // xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="-35 0 30 60"
     fill="currentColor"
     {...props}
   >
@@ -91,10 +92,10 @@ function MessageApp() {
     return (
       <div className="flex items-center justify-center shadow-md h-full">
         <div className="flex flex-col items-center justify-center max-w-xl w-full mx-4 p-8 rounded-md shadow-card bg-white dark:bg-coolDark-600 transition-all">
-          <h2 className="mb-2 text-3xl flex items-center">
-            <svg
+          <h2 className="mb-2 text-3xl flex items-center text-center">
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
+              viewBox="-35 0 30 60"
               fill="currentColor"
               className="flex-shrink-0 w-12 h-12 mr-1 text-primary-500"
             >
@@ -103,18 +104,18 @@ function MessageApp() {
                 d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
                 clipRule="evenodd"
               />
-            </svg>
-            React FireChat
+            </svg> */}
+            Clone Instagram Chat
           </h2>
           <p className="mb-8 text-lg text-center">
             The easiest way to chat with people all around the world.
           </p>
           <button
             onClick={signInWithGoogle}
-            className="rounded shadow-button pl-6 pr-8 py-3 bg-white hover:bg-gray-50 text-gray-600 font-medium flex items-center justify-center overflow-y-hidden focus:outline-none focus:ring focus:ring-primary-500 focus:ring-opacity-75"
+            className="rounded pl-6 pr-8 py-3 bg-white hover:bg-gray-50 text-gray-600 font-medium flex items-center justify-center overflow-y-hidden focus:outline-none focus:ring focus:ring-primary-500 focus:ring-opacity-75 GoogleLoginButton"
           >
             <svg
-              viewBox="5 -5 30 30"
+              viewBox="5 -5 50 30"
               enableBackground="new 5 -5 30 30"
               className="w-6 h-6 mr-4 flex-shrink-0"
             >
@@ -159,7 +160,7 @@ function MessageApp() {
           {user ? (
             <button
               onClick={signOut}
-              className="uppercase text-sm font-medium text-primary-500 hover:text-white tracking-wide hover:bg-primary-500 bg-transparent rounded py-2 px-4 mr-4 focus:outline-none focus:ring focus:ring-primary-500 focus:ring-opacity-75 transition-all"
+              className="uppercase text-sm font-medium text-primary-500 hover:text-white tracking-wide hover:bg-primary-500 bg-transparent rounded py-2 px-4 mr-4 focus:outline-none focus:ring focus:ring-primary-500 focus:ring-opacity-75 transition-all SignOutButton"
             >
               Sign out
             </button>
