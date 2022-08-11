@@ -18,17 +18,11 @@ function Sidebar() {
           <Profile
             username={user.displayName}
             caption="Username"
-            urlText="Logout"
             iconSize="big"
             image={profileImage}
           />
         ) : (
-          <Profile
-            caption="Username"
-            urlText="Logout"
-            iconSize="big"
-            image={DefaultIcon}
-          />
+          <Profile caption="Username" iconSize="big" image={DefaultIcon} />
         )}
 
         <Suggestions />

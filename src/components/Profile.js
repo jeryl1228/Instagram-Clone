@@ -27,13 +27,13 @@ function Profile(props) {
   return (
     <div className="profile">
       {user ? (
-        <div>
+        <div className="profileContainer">
           <Avatar
             className="postAvatar"
             alt={username}
             src="/static/images/avatar/1.jpg"
           />
-          <br></br>
+
           {(accountName || caption) && !hideAccountName && (
             <div className="textContainer">
               <span className="accountName">{username}</span>
@@ -43,13 +43,13 @@ function Profile(props) {
           <a href="/">{urlText}</a>
         </div>
       ) : (
-        <div>
+        <div className="profileContainer">
           <Avatar
             className="postAvatar"
             alt={username}
             src="/static/images/avatar/1.jpg"
           />
-          <br></br>
+
           {(accountName || caption) && !hideAccountName && (
             <div className="textContainer">
               <span className="accountName">{username}</span>
