@@ -53,33 +53,37 @@ const Channel = ({ user = null }) => {
   };
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="overflow-auto h-full">
-        <div className="py-4 max-w-screen-lg mx-auto">
-          <div className="border-b dark:border-gray-600 border-gray-200 py-8 mb-4">
-            <div className="font-bold text-3xl text-center">
-              <p className="mb-1">Welcome to</p>
-              <p className="mb-3">Clone Instagram Chat</p>
-            </div>
-            {/* <p className="text-gray-400 text-center">
+    <div className="chatGod">
+      <div className="flex flex-col h-full chatContainer">
+        <div className="overflow-auto h-full chatBox">
+          <div className="py-4 max-w-screen-lg mx-auto ">
+            <div className="border-b dark:border-gray-600 border-gray-200 py-8 mb-4">
+              <div className="font-bold text-3xl text-center chatHeaderContainer">
+                <p className="mb-1 chatHeader">
+                  Welcome to Clone Instagram Chat
+                </p>
+                <hr></hr>
+              </div>
+              {/* <p className="text-gray-400 text-center">
               This is the beginning of this chat.
             </p> */}
+            </div>
+            <ul>
+              {messages
+                ?.sort((first, second) =>
+                  first?.createdAt?.seconds <= second?.createdAt?.seconds
+                    ? -1
+                    : 1
+                )
+                ?.map((message) => (
+                  <li key={message.id}>
+                    <Message {...message} />
+                  </li>
+                ))}
+            </ul>
+            <div ref={bottomListRef} />
           </div>
-          <ul>
-            {messages
-              ?.sort((first, second) =>
-                first?.createdAt?.seconds <= second?.createdAt?.seconds ? -1 : 1
-              )
-              ?.map((message) => (
-                <li key={message.id}>
-                  <Message {...message} />
-                </li>
-              ))}
-          </ul>
-          <div ref={bottomListRef} />
         </div>
-      </div>
-      <div className="mb-6 mx-4">
         <form
           onSubmit={handleOnSubmit}
           className="flex flex-row bg-gray-200 dark:bg-coolDark-400 rounded-md px-4 py-3 z-10 max-w-screen-lg mx-auto dark:text-white shadow-md MessageInput"
@@ -95,7 +99,7 @@ const Channel = ({ user = null }) => {
           <button
             type="submit"
             disabled={!newMessage}
-            className="uppercase font-semibold text-sm tracking-wider text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="uppercase font-semibold text-sm tracking-wider text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors submitButton"
           >
             Send
           </button>

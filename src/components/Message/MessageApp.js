@@ -39,12 +39,15 @@ function MessageApp() {
 
     return (
       <div className="flex items-center justify-center shadow-md h-full">
-        <div className="flex flex-col items-center justify-center max-w-xl w-full mx-4 p-8 rounded-md shadow-card bg-white dark:bg-coolDark-600 transition-all">
-          <h2 className="mb-2 text-3xl flex items-center text-center">
+        <div className="flex flex-col items-center justify-center max-w-xl w-full mx-4 p-8 rounded-md shadow-card bg-white dark:bg-coolDark-600 transition-all defaultMessage">
+          <h1 className="mb-2 text-3xl flex items-center text-center title">
             Clone Instagram Chat
-          </h2>
+          </h1>
           <p className="mb-8 text-lg text-center">
             The easiest way to chat with people all around the world.
+          </p>
+          <p className="alert">
+            Please <span className="loginSpan">Login</span> to continue
           </p>
         </div>
       </div>
