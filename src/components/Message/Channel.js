@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import PropTypes from "prop-types";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
@@ -6,6 +6,7 @@ import { useFirestoreQuery } from "./hooks";
 // Components
 import Message from "./Message";
 import "./MessageApp.css";
+import { UserContext } from "../App";
 
 const Channel = ({ user = null }) => {
   const db = firebase.firestore();
@@ -89,7 +90,7 @@ const Channel = ({ user = null }) => {
             value={newMessage}
             onChange={handleOnChange}
             placeholder="Type your message here..."
-            className="flex-1 bg-transparent outline-none"
+            className="flex-1 bg-transparent outline-none textBox"
           />
           <button
             type="submit"
