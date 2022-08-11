@@ -23,7 +23,7 @@ function Card(props) {
   useEffect(() => {
     let unsubscribe;
     if (cardId) {
-      unsubscribe = db.collection("card").doc(cardId).collection("comments").onSnapshot((snapshot) => {
+      unsubscribe = db.collection("card").doc(cardId).collection("comments").orderBy('timestamp', 'asc').onSnapshot((snapshot) => {
          setComments(snapshot.docs.map((doc) => doc.data()));
         });
       }
@@ -60,10 +60,8 @@ function Card(props) {
       <CardMenu />
       {/* <div className="likedBy">
         <Profile iconSize="small" hideAccountName={true} />
-=======
       <div className="likedBy">
         <ProfileIcon iconSize="small" hideAccountName={true} />
->>>>>>> a1227a1683a9deebe7d273c8ae4628e56aab4821
         <span>
           Liked by <strong>{likedByText}</strong> and{" "}
           <strong>{likedByNumber}</strong>
@@ -76,14 +74,12 @@ function Card(props) {
       <div className="addComment">
         {/* <div className="commentText">Add a comment...</div>
         <div className="postText">POST</div> */}
-        <div className="card__comments">
         {comments.map((comment)=>(
           <p>
-            <b>{comment.accountName}</b>
+            <b>{comment.username}</b>
           {comment.text}</p>
         ))}
-        </div>
-        <form>
+        <form className="card_commentBox">
           <input 
           className="comment_input" 
           type="text" 
