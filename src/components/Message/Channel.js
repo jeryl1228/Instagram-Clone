@@ -5,6 +5,7 @@ import "firebase/compat/firestore";
 import { useFirestoreQuery } from "./hooks";
 // Components
 import Message from "./Message";
+import "./MessageApp.css";
 
 const Channel = ({ user = null }) => {
   const db = firebase.firestore();
@@ -59,9 +60,9 @@ const Channel = ({ user = null }) => {
               <p className="mb-1">Welcome to</p>
               <p className="mb-3">Clone Instagram Chat</p>
             </div>
-            <p className="text-gray-400 text-center">
+            {/* <p className="text-gray-400 text-center">
               This is the beginning of this chat.
-            </p>
+            </p> */}
           </div>
           <ul>
             {messages
@@ -80,7 +81,7 @@ const Channel = ({ user = null }) => {
       <div className="mb-6 mx-4">
         <form
           onSubmit={handleOnSubmit}
-          className="flex flex-row bg-gray-200 dark:bg-coolDark-400 rounded-md px-4 py-3 z-10 max-w-screen-lg mx-auto dark:text-white shadow-md"
+          className="flex flex-row bg-gray-200 dark:bg-coolDark-400 rounded-md px-4 py-3 z-10 max-w-screen-lg mx-auto dark:text-white shadow-md MessageInput"
         >
           <input
             ref={inputRef}
