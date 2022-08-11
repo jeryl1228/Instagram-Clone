@@ -4,6 +4,7 @@ import Profile from "./Profile";
 import { ReactComponent as CardButton } from "../images/cardButton.svg";
 import CardMenu from "./CardMenu.js";
 import { UserContext } from "./App";
+import ProfileIcon from "./ProfileIcon";
 
 function Card(props) {
   const {
@@ -31,7 +32,7 @@ function Card(props) {
       <img className="cardimage" src={image} alt="card content" />
       <CardMenu />
       <div className="likedBy">
-        <Profile iconSize="small" hideAccountName={true} />
+        <ProfileIcon iconSize="small" hideAccountName={true} />
         <span>
           Liked by <strong>{likedByText}</strong> and{" "}
           <strong>{likedByNumber}</strong>

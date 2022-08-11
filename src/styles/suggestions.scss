@@ -1,23 +1,44 @@
 @import "./properties";
 
-.suggestions{
-    margin-top: 1.25em;
+.suggestions {
+  margin-top: 1.25em;
 
-    .titleContainer{
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.8em;
-        font-weight: 500;
-        color: $font-color-secondary;
-        margin-bottom: 1.25em;
+  .titleContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: $font-color-secondary;
+    margin-bottom: 1.25em;
 
-        .title{
-            min-width: 200px;
-        }
-        a{
-            width: 100%;
-            text-align: right;
-            color: black;
-        }
+    .title {
+      min-width: 200px;
     }
+    a {
+      width: 100%;
+      text-align: right;
+      color: black;
+    }
+  }
+}
+
+.suggestedprof {
+  display: flex;
+  margin-bottom: 5px;
+}
+strong {
+  color: black;
+}
+p {
+  font-size: 10px;
+  margin-top: 1px;
+  margin-left: 5px;
+  font-size: 10px;
+  color: #8e8e8e;
+}
+
+.follow {
+  display: flex;
+  margin-left: auto;
+  font-size: 10px;
 }

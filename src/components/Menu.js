@@ -10,6 +10,7 @@ import DefaultIcon from "../images/defaulticon.jpeg";
 
 import Login from "./Login";
 import { UserContext } from "./App";
+import { Avatar } from "@mui/material";
 
 function Menu({ image, setUser }) {
   const user = useContext(UserContext);
@@ -28,7 +29,12 @@ function Menu({ image, setUser }) {
       </a>
       {user ? (
         <a href="/profile">
-          <ProfileIcon iconSize="small" image={profileImage} />
+          <Avatar
+            className="postAvatar"
+            alt={user.displayName}
+            src="/static/images/avatar/1.jpg"
+            sx={{ width: 23, height: 23 }}
+          />
         </a>
       ) : (
         <a href="/profile">
