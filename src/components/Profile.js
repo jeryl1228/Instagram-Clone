@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "../styles/profile.scss";
-import ProfileIcon from "./ProfileIcon";
+
 import users from "../data/users";
 import { UserContext } from "./App";
-import DefaultIcon from "../images/defaulticon.jpeg";
+
 import { Avatar } from "@mui/material";
 
 function Profile(props) {
@@ -11,11 +11,11 @@ function Profile(props) {
     username,
     caption,
     urlText,
-    iconSize,
+    // iconSize,
     captionSize,
-    storyBorder,
+    // storyBorder,
     hideAccountName,
-    image,
+    // image,
   } = props;
 
   const user = useContext(UserContext);
