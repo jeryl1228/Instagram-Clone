@@ -5,7 +5,7 @@ import { ReactComponent as Inbox } from "../images/inbox.svg";
 import { ReactComponent as Notifications } from "../images/notifications.svg";
 import CreatePost from "./CreatePost";
 import ProfileIcon from "./ProfileIcon";
-import profileImage from "../images/profile.jpg";
+
 import DefaultIcon from "../images/defaulticon.jpeg";
 
 import Login from "./Login";
