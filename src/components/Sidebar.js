@@ -6,7 +6,7 @@ import Suggestions from "./Suggestions";
 import Footer from "./Footer";
 import profileImage from "../images/profile.jpg";
 import { UserContext } from "./App";
-import DefaultIcon from "../images/defaulticon.jpeg";
+import { Avatar } from "@mui/material";
 
 function Sidebar() {
   const user = useContext(UserContext);
@@ -22,7 +22,7 @@ function Sidebar() {
             image={profileImage}
           />
         ) : (
-          <Profile caption="Username" iconSize="big" image={DefaultIcon} />
+          <Avatar className="defaultAvatar" src="/broken-image.jpg" />
         )}
 
         <Suggestions />
