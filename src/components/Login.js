@@ -81,7 +81,6 @@ function Login() {
           </button>
         </div>
       )}
-
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
@@ -121,7 +120,6 @@ function Login() {
           </div>
         </div>
       )}
-
       {modal2 && (
         <div className="modal">
           <div onClick={toggleModal2} className="overlay"></div>
