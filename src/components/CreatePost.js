@@ -3,6 +3,7 @@ import "../styles/createPost.scss";
 import { storage, db } from "../data/firebaseConfig";
 import { Button, TextField } from "@mui/material";
 import { ReactComponent as CreatePostLogo } from "../images/createPost.svg";
+import firebase from 'firebase/compat/app';
 
 function CreatePost() {
   const [image, setImage] = useState(null);
@@ -40,7 +41,7 @@ function CreatePost() {
           .getDownloadURL()
           .then((url) => {
             db.collection("card").add({
-              //hours: firebase.firestore.FieldValue.serverTimestamp(),
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
               description: description,
               image: url,
               // username: username,
