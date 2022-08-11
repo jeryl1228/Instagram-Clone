@@ -20,7 +20,7 @@ function App() {
     <UserContext.Provider value={user}>
       <Routes>
         <Route path="/" element={<Home setUser={setUser} />} />
-        <Route path="/inbox" element={<MessageMain />} />
+        <Route path="/inbox" element={<MessageMain setUser={setUser} />} />
         <Route path="/createpost" element={<CreatePost />} />
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/profile" element={<ProfileMain />} />
