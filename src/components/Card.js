@@ -26,6 +26,7 @@ function Card(props) {
           iconSize="medium"
           storyBorder={storyBorder}
           username={accountName}
+          className="headerProfile"
         />
         <CardButton className="cardButton" />
       </header>
