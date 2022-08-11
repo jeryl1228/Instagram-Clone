@@ -4,7 +4,7 @@ import logo from "../images/instagramLogo.png";
 import searchIcon from "../images/searchIcon.png";
 import Menu from "./Menu.js";
 
-function Navigation() {
+function Navigation({ setUser }) {
   return (
     <div className="navigation">
       <div className="container">
@@ -13,7 +13,7 @@ function Navigation() {
           <img className="searchIcon" src={searchIcon} alt="search icon" />
           <span className="searchText">Search</span>
         </div>
-        <Menu />
+        <Menu setUser={setUser} />
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/card.scss";
 import Profile from "./Profile";
 import { ReactComponent as CardButton } from "../images/cardButton.svg";
 import CardMenu from "./CardMenu.js";
+import { UserContext } from "./App";
 
 function Card(props) {
   const {
@@ -14,6 +15,8 @@ function Card(props) {
     hours,
     description,
   } = props;
+
+  const user = useContext(UserContext);
 
   return (
     <div className="card">
