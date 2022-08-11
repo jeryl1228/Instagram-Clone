@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { formatRelative } from 'date-fns';
+import React from "react";
+import PropTypes from "prop-types";
+import { formatRelative } from "date-fns";
 
-const formatDate = date => {
-  let formattedDate = '';
+const formatDate = (date) => {
+  let formattedDate = "";
   if (date) {
     // Convert the date in words relative to the current date
     formattedDate = formatRelative(date, new Date());
@@ -16,9 +16,9 @@ const formatDate = date => {
 
 const Message = ({
   createdAt = null,
-  text = '',
-  displayName = '',
-  photoURL = '',
+  text = "",
+  displayName = "",
+  photoURL = "",
 }) => {
   if (!text) return null;
 
