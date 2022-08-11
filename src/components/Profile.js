@@ -4,6 +4,7 @@ import ProfileIcon from "./ProfileIcon";
 import users from "../data/users";
 import { UserContext } from "./App";
 import DefaultIcon from "../images/defaulticon.jpeg";
+import { Avatar } from "@mui/material";
 
 function Profile(props) {
   const {
@@ -27,10 +28,10 @@ function Profile(props) {
     <div className="profile">
       {user ? (
         <div>
-          <ProfileIcon
-            iconSize={iconSize}
-            storyBorder={storyBorder}
-            image={image}
+          <Avatar
+            className="postAvatar"
+            alt={username}
+            src="/static/images/avatar/1.jpg"
           />
           <br></br>
           {(accountName || caption) && !hideAccountName && (
@@ -43,10 +44,10 @@ function Profile(props) {
         </div>
       ) : (
         <div>
-          <ProfileIcon
-            iconSize={iconSize}
-            storyBorder={storyBorder}
-            image={image}
+          <Avatar
+            className="postAvatar"
+            alt={username}
+            src="/static/images/avatar/1.jpg"
           />
           <br></br>
           {(accountName || caption) && !hideAccountName && (

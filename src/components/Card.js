@@ -7,6 +7,7 @@ import { db } from "../data/firebaseConfig";
 import firebase from "firebase/compat/app"
 
 import { UserContext } from "./App";
+import ProfileIcon from "./ProfileIcon";
 
 function Card(props) {
   let {
@@ -59,6 +60,10 @@ function Card(props) {
       <CardMenu />
       {/* <div className="likedBy">
         <Profile iconSize="small" hideAccountName={true} />
+=======
+      <div className="likedBy">
+        <ProfileIcon iconSize="small" hideAccountName={true} />
+>>>>>>> a1227a1683a9deebe7d273c8ae4628e56aab4821
         <span>
           Liked by <strong>{likedByText}</strong> and{" "}
           <strong>{likedByNumber}</strong>
