@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "react";
-import React, { useContext } from "react";
+import React, {useEffect, useState, useContext } from "react";
 import "../styles/card.scss";
 import Profile from "./Profile";
 import { ReactComponent as CardButton } from "../images/cardButton.svg";
@@ -10,7 +9,7 @@ import firebase from "firebase/compat/app"
 import { UserContext } from "./App";
 
 function Card(props) {
-  const {
+  let {
     accountName,
     image,
     description,
@@ -18,31 +17,33 @@ function Card(props) {
   } = props;
   const [ comments, setComments ] = useState([]);
   const [ comment, setComment ] = useState('');
+  const user = useContext(UserContext);
 
   useEffect(() => {
     let unsubscribe;
     if (cardId) {
-      unsubscribe = cardId = db.collection("card").doc(cardId).collection("comments").onSnapshot((snapshot) => {
+      unsubscribe = db.collection("card").doc(cardId).collection("comments").onSnapshot((snapshot) => {
          setComments(snapshot.docs.map((doc) => doc.data()));
         });
       }
-    // return () => {
-    //   unsubscribe();
-    // };
+
+
+    return () => {
+      unsubscribe();
+    };
   }, [cardId]); 
 
-const postComment = (event) => {
-  event.preventDefault();
+  const postComment = (event) => {
+    event.preventDefault();
 
-  db.collection("card").doc(cardId).collection("comments").add({
-    text: comment,
-    //accountName: accountName
-    timestamp: firebase.firestore.FieldValue.serverTimestamp()
-  });
-  setComment('');    
-}
+    db.collection("card").doc(cardId).collection("comments").add({
+      text: comment,
+      username: user.displayName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    setComment('');    
+  }
 
-  const user = useContext(UserContext);
 
   return (
     <div className="card">
@@ -73,7 +74,7 @@ const postComment = (event) => {
         <div className="card__comments">
         {comments.map((comment)=>(
           <p>
-            {/* <b>{comment.accountName}</b> */}
+            <b>{comment.accountName}</b>
           {comment.text}</p>
         ))}
         </div>
