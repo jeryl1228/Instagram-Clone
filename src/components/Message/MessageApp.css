@@ -17,10 +17,19 @@
 /* Channel CSS */
 .MessageInput {
   display: flex;
+  border-color: rgb(0, 0, 0);
+  box-shadow: 0 0 8px 0 rgb(0, 1, 1);
+  border-top: 1px solid lightgray;
 }
 
 .textBox {
   flex: 1;
-
   position: relative;
+
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  border: none;
 }

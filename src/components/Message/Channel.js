@@ -90,7 +90,7 @@ const Channel = ({ user = null }) => {
             value={newMessage}
             onChange={handleOnChange}
             placeholder="Type your message here..."
-            className="flex-1 bg-transparent outline-none textBox"
+            className="flex-1 bg-transparent outline-none textBox chatBox"
           />
           <button
             type="submit"
