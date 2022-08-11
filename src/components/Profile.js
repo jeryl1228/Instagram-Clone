@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/profile.scss";
 import ProfileIcon from "./ProfileIcon";
 import users from "../data/users";
+import { UserContext } from "./App";
+import DefaultIcon from "../images/defaulticon.jpeg";
+import { Avatar } from "@mui/material";
 
 function Profile(props) {
   const {
@@ -15,25 +18,47 @@ function Profile(props) {
     image,
   } = props;
 
+  const user = useContext(UserContext);
+
   let accountName = username
     ? username
     : users[Math.floor(Math.random() * users.length)].username;
 
   return (
     <div className="profile">
-      <ProfileIcon
-        iconSize={iconSize}
-        storyBorder={storyBorder}
-        image={image}
-      />
-      <br></br>
-      {(accountName || caption) && !hideAccountName && (
-        <div className="textContainer">
-          <span className="accountName">{accountName}</span>
-          <span className={`caption ${captionSize}`}>{caption}</span>
+      {user ? (
+        <div className="profileContainer">
+          <Avatar
+            className="postAvatar"
+            alt={username}
+            src="/static/images/avatar/1.jpg"
+          />
+
+          {(accountName || caption) && !hideAccountName && (
+            <div className="textContainer">
+              <span className="accountName">{username}</span>
+              <span className={`caption ${captionSize}`}>{caption}</span>
+            </div>
+          )}
+          <a href="/">{urlText}</a>
+        </div>
+      ) : (
+        <div className="profileContainer">
+          <Avatar
+            className="postAvatar"
+            alt={username}
+            src="/static/images/avatar/1.jpg"
+          />
+
+          {(accountName || caption) && !hideAccountName && (
+            <div className="textContainer">
+              <span className="accountName">{username}</span>
+              <span className={`caption ${captionSize}`}>{caption}</span>
+            </div>
+          )}
+          <a href="/">{urlText}</a>
         </div>
       )}
-      <a href="/">{urlText}</a>
     </div>
   );
 }

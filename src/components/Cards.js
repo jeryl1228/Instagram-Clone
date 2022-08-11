@@ -25,7 +25,7 @@ function Cards() {
       {cards.map(({ id, card }) => (
         <Card
           key={id}
-          accountName={card.accountName}
+          accountName={card.username}
           storyBorder={card.storyBorder}
           image={card.image}
           likedByText={card.likedByText}

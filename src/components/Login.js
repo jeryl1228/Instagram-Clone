@@ -1,18 +1,20 @@
 import "../styles/login.scss";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
 import { auth } from "../data/firebaseConfig";
 import logo from "../images/instagramLogo.png";
+import { UserContext } from "./App";
 
-function Login() {
+function Login({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [user, setUser] = useState(null);
   const [modal, setModal] = useState(false);
   const [modal2, setModal2] = useState(false);
+
+  const user = useContext(UserContext);
 
   const toggleModal = () => {
     setModal(!modal);

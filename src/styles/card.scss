@@ -11,9 +11,12 @@
     justify-content: space-between;
     align-content: center;
     padding: 0.7em;
+    flex-direction: row;
 
     .profile {
-      margin-bottom: 0;
+      margin: 0;
+      display: flex;
+      width: 100%;
     }
     .cardButton {
       height: 30px;
@@ -40,13 +43,13 @@
       padding-top: 0.5em;
     }
   }
-  .caption{
+  .caption {
     display: flex;
     font-size: 0.75em;
     margin-left: 1.5em;
     padding-bottom: 2em;
   }
-  .captionName{
+  .captionName {
     margin-right: 0.5em;
   }
 
@@ -73,6 +76,11 @@
       color: $link-color-secondary;
     }
   }
+}
+
+.headerProfile {
+  margin: 0;
+  padding: 0;
 }
 @media only screen and (max-width: 640px) {
   .card {

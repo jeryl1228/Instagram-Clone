@@ -13,8 +13,10 @@
     min-width: 180px;
 
     .accountName {
-      font-weight: 500;
+      font-weight: bold;
       margin-bottom: 5px;
+      margin-top: auto;
+      margin-bottom: auto;
 
       &:hover {
         cursor: pointer;
@@ -23,6 +25,8 @@
     }
     .caption {
       color: $font-color-secondary;
+      margin: 0;
+      padding: 0;
 
       &.small {
         font-size: 0.8em;
@@ -33,4 +37,8 @@
     text-align: right;
     width: 0;
   }
+}
+
+.profileContainer {
+  display: flex;
 }

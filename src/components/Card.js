@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/card.scss";
 import Profile from "./Profile";
 import { ReactComponent as CardButton } from "../images/cardButton.svg";
 import CardMenu from "./CardMenu.js";
+import { UserContext } from "./App";
+import ProfileIcon from "./ProfileIcon";
 
 function Card(props) {
   const {
@@ -15,6 +17,8 @@ function Card(props) {
     description,
   } = props;
 
+  const user = useContext(UserContext);
+
   return (
     <div className="card">
       <header>
@@ -22,13 +26,14 @@ function Card(props) {
           iconSize="medium"
           storyBorder={storyBorder}
           username={accountName}
+          className="headerProfile"
         />
         <CardButton className="cardButton" />
       </header>
       <img className="cardimage" src={image} alt="card content" />
       <CardMenu />
       <div className="likedBy">
-        <Profile iconSize="small" hideAccountName={true} />
+        <ProfileIcon iconSize="small" hideAccountName={true} />
         <span>
           Liked by <strong>{likedByText}</strong> and{" "}
           <strong>{likedByNumber}</strong>

@@ -6,17 +6,26 @@ import Home from "./Home";
 import CreatePost from "./CreatePost";
 import Notifications from "./Notifications.js";
 import ProfileMain from "./ProfilePage/ProfileMain";
+
 import MessageMain from "./Message/MessageMain";
 
+import { createContext, useState } from "react";
+
+export const UserContext = createContext();
+
 function App() {
+  const [user, setUser] = useState(null);
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/inbox" element={<MessageMain />} />
-      <Route path="/createpost" element={<CreatePost />} />
-      <Route path="/notifications" element={<Notifications />} />
-      <Route path="/profile" element={<ProfileMain />} />
-    </Routes>
+    <UserContext.Provider value={user}>
+      <Routes>
+        <Route path="/" element={<Home setUser={setUser} />} />
+        <Route path="/inbox" element={<MessageMain />} />
+        <Route path="/createpost" element={<CreatePost />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/profile" element={<ProfileMain />} />
+      </Routes>
+    </UserContext.Provider>
   );
 }
 
