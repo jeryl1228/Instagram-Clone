@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from "react";
+import React, { useContext } from "react";
 import "../styles/card.scss";
 import Profile from "./Profile";
 import { ReactComponent as CardButton } from "../images/cardButton.svg";
 import CardMenu from "./CardMenu.js";
 import { db } from "../data/firebaseConfig";
 import firebase from "firebase/compat/app"
+
+import { UserContext } from "./App";
 
 function Card(props) {
   const {
@@ -38,6 +41,8 @@ const postComment = (event) => {
   });
   setComment('');    
 }
+
+  const user = useContext(UserContext);
 
   return (
     <div className="card">

@@ -1,22 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/sidebar.scss";
 import Sticky from "react-sticky-el";
 import Profile from "./Profile";
 import Suggestions from "./Suggestions";
 import Footer from "./Footer";
-import image from "../images/profile.jpg";
+import profileImage from "../images/profile.jpg";
+import { UserContext } from "./App";
+import DefaultIcon from "../images/defaulticon.jpeg";
 
 function Sidebar() {
+  const user = useContext(UserContext);
+
   return (
     <Sticky topOffset={-80}>
       <div className="sidebar">
-        <Profile
-          userName="username"
-          caption="Username"
-          urlText="Logout"
-          iconSize="big"
-          image={image}
-        />
+        {user ? (
+          <Profile
+            username={user.displayName}
+            caption="Username"
+            urlText="Logout"
+            iconSize="big"
+            image={profileImage}
+          />
+        ) : (
+          <Profile
+            caption="Username"
+            urlText="Logout"
+            iconSize="big"
+            image={DefaultIcon}
+          />
+        )}
+
         <Suggestions />
         <Footer />
       </div>
