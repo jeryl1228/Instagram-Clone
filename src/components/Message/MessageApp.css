@@ -15,6 +15,32 @@
 }
 
 /* Channel CSS */
+.profileContainer {
+  padding-left: 10px;
+}
+
+.message {
+  font-size: 12px;
+  color: black;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: 6px;
+}
+
+.chatName {
+  color: black;
+  font-weight: bold;
+  font-size: 13px;
+  padding-left: 2px;
+  padding-top: 10px;
+}
+
+.timePosted {
+  font-size: 8px;
+  color: #8e8e8e;
+  margin: 0;
+  padding-left: 20px;
+}
 .MessageInput {
   display: flex;
   border-color: rgb(0, 0, 0);

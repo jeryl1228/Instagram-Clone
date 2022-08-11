@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { formatRelative } from "date-fns";
+import { Avatar } from "@mui/material";
+import { UserContext } from "../App";
 
 const formatDate = (date) => {
   let formattedDate = "";
@@ -22,30 +24,29 @@ const Message = ({
 }) => {
   if (!text) return null;
 
+  // const user = useContext(UserContext);
   return (
-    <div className="px-4 py-4 rounded-md hover:bg-gray-50 dark:hover:bg-coolDark-600 overflow-hidden flex items-start">
-      {photoURL ? (
-        <img
-          src={photoURL}
-          alt="Avatar"
-          className="rounded-full mr-4"
-          width={45}
-          height={45}
+    <div className="px-4 py-4 rounded-md hover:bg-gray-50 dark:hover:bg-coolDark-600 overflow-hidden flex items-start ">
+      <div className="profileContainer">
+        <Avatar
+          className="messageAvatar"
+          alt={displayName}
+          src="/static/images/avatar/1.jpg"
         />
-      ) : null}
-      <div>
         <div className="flex items-center mb-1">
           {displayName ? (
-            <p className="mr-2 text-primary-500">{displayName}</p>
-          ) : null}
-          {createdAt?.seconds ? (
-            <span className="text-gray-500 text-xs">
-              {formatDate(new Date(createdAt.seconds * 1000))}
-            </span>
+            <p className="chatName mr-2 text-primary-500">{displayName}</p>
           ) : null}
         </div>
-        <p>{text}</p>
       </div>
+      <p className="message">{text}</p>
+      {createdAt?.seconds ? (
+        <span className="timePosted text-gray-500 text-xs">
+          {formatDate(new Date(createdAt.seconds * 1000))}
+        </span>
+      ) : null}
+
+      <hr></hr>
     </div>
   );
 };
