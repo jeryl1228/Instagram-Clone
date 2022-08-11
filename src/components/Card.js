@@ -77,7 +77,7 @@ function Card(props) {
         <div className="postText">POST</div> */}
         {comments.map((comment)=>(
           <p>
-            <b>{comment.username}</b>
+            <b className="commentTag">{comment.username}</b>
           {comment.text}</p>
         ))}
         <form className="card_commentBox">
